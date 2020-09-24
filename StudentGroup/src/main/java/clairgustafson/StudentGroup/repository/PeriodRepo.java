@@ -1,5 +1,5 @@
 package clairgustafson.StudentGroup.repository;
 
-public interface Groups {
+public interface PeriodRepo {
 
 }
