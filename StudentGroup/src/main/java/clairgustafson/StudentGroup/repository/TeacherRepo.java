@@ -1,5 +1,9 @@
 package clairgustafson.StudentGroup.repository;
 
-public interface TeacherRepo {
+import org.springframework.data.repository.CrudRepository;
+
+import clairgustafson.StudentGroup.entity.Teacher;
+
+public interface TeacherRepo extends CrudRepository <Teacher, Long> {
 
 }

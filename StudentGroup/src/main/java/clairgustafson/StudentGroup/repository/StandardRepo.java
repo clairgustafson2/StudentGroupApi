@@ -1,5 +1,9 @@
 package clairgustafson.StudentGroup.repository;
 
-public interface StandardRepo {
+import org.springframework.data.repository.CrudRepository;
+
+import clairgustafson.StudentGroup.entity.Standard;
+
+public interface StandardRepo extends CrudRepository <Standard, Long> {
 
 }

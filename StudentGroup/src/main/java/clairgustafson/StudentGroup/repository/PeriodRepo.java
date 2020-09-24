@@ -1,5 +1,9 @@
 package clairgustafson.StudentGroup.repository;
 
-public interface PeriodRepo {
+import org.springframework.data.repository.CrudRepository;
+
+import clairgustafson.StudentGroup.entity.Period;
+
+public interface PeriodRepo extends CrudRepository <Period, Long> {
 
 }
