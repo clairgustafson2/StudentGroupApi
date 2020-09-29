@@ -1,5 +1,5 @@
 package clairgustafson.StudentGroup.service;
 
-public class Groups {
+public class StudentService {
 
 }

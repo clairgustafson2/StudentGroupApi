@@ -1,5 +1,5 @@
 package clairgustafson.StudentGroup.controller;
 
-public class Teacher {
+public class StudentController {
 
 }

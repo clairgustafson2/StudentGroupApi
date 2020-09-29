@@ -1,5 +1,5 @@
 package clairgustafson.StudentGroup.service;
 
-public class Teacher {
+public class StandardService {
 
 }
