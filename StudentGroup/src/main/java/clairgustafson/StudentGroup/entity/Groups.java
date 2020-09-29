@@ -1,20 +1,29 @@
 package clairgustafson.StudentGroup.entity;
 
 import java.time.LocalDate;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Groups {
 	
 	private Long id;
 	private String name;
-	private String standard;
 	private LocalDate startDate;
 	private LocalDate endDate;
+	
+	@JsonIgnore
+	private Set<Standard> standard;
 	
 	
 	@Id
@@ -35,13 +44,19 @@ public class Groups {
 		this.name = name;
 	}
 	
-	public String getStandard() {
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "group_standard",
+			joinColumns = @JoinColumn(name = "standardId", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "groupId", referencedColumnName = "id"))
+	public Set<Standard> getStandard() {
 		return standard;
 	}
 	
-	public void setStandard(String standard) {
+	public void setStandard(Set<Standard> standard) {
 		this.standard = standard;
 	}
+	
 	
 	public LocalDate getStartDate() {
 		return startDate;

@@ -1,19 +1,27 @@
 package clairgustafson.StudentGroup.service;
 
-import org.springframework.util.MultiValueMap;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import clairgustafson.StudentGroup.entity.Teacher;
+import clairgustafson.StudentGroup.repository.TeacherRepo;
 
+@Service
 public class TeacherService {
 
-	public MultiValueMap<String, String> createTeacher(Teacher teacher) {
-		// TODO Auto-generated method stub
-		return null;
+	@Autowired
+	private TeacherRepo repo;
+	
+	public Teacher createTeacher(Teacher teacher) {
+		return repo.save(teacher);
 	}
-
-	public MultiValueMap<String, String> login(Teacher teacher) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public Teacher login(Teacher teacher) throws Exception{
+		Teacher foundTeacher = repo.findByEmail(teacher.getEmail());
+		if (foundTeacher != null && foundTeacher.getPassword().equals(teacher.getPassword())) {
+			return foundTeacher;
+		} else {
+			throw new Exception("Invalid email or password");
+		}
 	}
-
+	
 }

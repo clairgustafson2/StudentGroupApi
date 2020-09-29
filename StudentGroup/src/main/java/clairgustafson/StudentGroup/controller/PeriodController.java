@@ -46,5 +46,15 @@ public class PeriodController {
 			return new ResponseEntity<Object> (e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
+	
+	@RequestMapping(value="/{periodId}", method=RequestMethod.DELETE)
+	public ResponseEntity<Object> deletePeriod(@PathVariable Long id) {
+		try {
+			service.removePeriod(id);
+			return new ResponseEntity<Object>("Successfully deleted period with id: " + id, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<Object>("Unable to delete period.", HttpStatus.BAD_REQUEST);
+		}
+	}
 
 }

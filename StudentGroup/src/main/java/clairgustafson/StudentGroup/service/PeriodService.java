@@ -26,4 +26,9 @@ public class PeriodService {
 		return null;
 	}
 
+	public void removePeriod(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
