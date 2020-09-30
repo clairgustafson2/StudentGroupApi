@@ -52,7 +52,7 @@ public class Period {
 		this.teacher = teacher;
 	}
 	
-	@OneToMany
+	@OneToMany (mappedBy = "groups")
 	public Set<Student> getStudents() {
 		return students;
 	}
