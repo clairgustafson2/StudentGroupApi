@@ -1,9 +1,15 @@
 package clairgustafson.StudentGroup.entity;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import clairgustafson.StudentGroup.util.AcademicLevel;
 
@@ -13,8 +19,9 @@ public class Student {
 	private Long id;
 	private String firstName;
 	private String lastName;
-	private String period;
+	private Period period;
 	private AcademicLevel level;
+	private Set<Groups> group;
 	
 	
 	@Id
@@ -43,11 +50,13 @@ public class Student {
 		this.lastName = lastName;
 	}
 	
-	public String getPeriod() {
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id")
+	public Period getPeriod() {
 		return period;
 	}
 	
-	public void setPeriod(String period) {
+	public void setPeriod(Period period) {
 		this.period = period;
 	}
 	
@@ -57,6 +66,15 @@ public class Student {
 	
 	public void setLevel(AcademicLevel level) {
 		this.level = level;
+	}
+
+	@OneToMany(mappedBy = "groups")
+	public Set<Groups> getGroup() {
+		return group;
+	}
+
+	public void setGroup(Set<Groups> group) {
+		this.group = group;
 	}
 
 }

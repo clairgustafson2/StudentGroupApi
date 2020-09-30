@@ -1,9 +1,17 @@
 package clairgustafson.StudentGroup.entity;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Standard {
@@ -14,6 +22,10 @@ public class Standard {
 	private String code;
 	private String description;
 	
+	@JsonIgnore
+	private Set<Groups> group;
+	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long getId() {
@@ -54,6 +66,18 @@ public class Standard {
 	
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "group_standard",
+			joinColumns = @JoinColumn(name = "standardId", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "groupId", referencedColumnName = "id"))
+	public Set<Groups> getGroup() {
+		return group;
+	}
+
+	public void setGroup(Set<Groups> group) {
+		this.group = group;
 	}
 
 }
