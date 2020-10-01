@@ -1,9 +1,10 @@
-package clairgustafson.StudentGroup.service;
+package com.clairgustafson.StudentGroup.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import clairgustafson.StudentGroup.entity.Teacher;
-import clairgustafson.StudentGroup.repository.TeacherRepo;
+
+import com.clairgustafson.StudentGroup.entity.Teacher;
+import com.clairgustafson.StudentGroup.repository.TeacherRepo;
 
 @Service
 public class TeacherService {

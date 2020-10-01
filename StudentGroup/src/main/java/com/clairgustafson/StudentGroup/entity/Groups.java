@@ -1,4 +1,4 @@
-package clairgustafson.StudentGroup.entity;
+package com.clairgustafson.StudentGroup.entity;
 
 import java.time.LocalDate;
 import java.util.Set;

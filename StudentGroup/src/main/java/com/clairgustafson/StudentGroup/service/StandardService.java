@@ -1,12 +1,12 @@
-package clairgustafson.StudentGroup.service;
+package com.clairgustafson.StudentGroup.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import clairgustafson.StudentGroup.entity.Standard;
-import clairgustafson.StudentGroup.repository.StandardRepo;
+import com.clairgustafson.StudentGroup.entity.Standard;
+import com.clairgustafson.StudentGroup.repository.StandardRepo;
 
 @Service
 public class StandardService {

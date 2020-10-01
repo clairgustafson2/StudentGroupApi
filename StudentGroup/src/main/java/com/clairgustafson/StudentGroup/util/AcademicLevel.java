@@ -1,4 +1,4 @@
-package clairgustafson.StudentGroup.util;
+package com.clairgustafson.StudentGroup.util;
 
 public enum AcademicLevel {
 	

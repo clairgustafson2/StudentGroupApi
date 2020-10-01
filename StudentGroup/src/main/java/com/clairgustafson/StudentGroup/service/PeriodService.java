@@ -1,13 +1,14 @@
-package clairgustafson.StudentGroup.service;
+package com.clairgustafson.StudentGroup.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import clairgustafson.StudentGroup.entity.Period;
-import clairgustafson.StudentGroup.entity.Teacher;
-import clairgustafson.StudentGroup.repository.PeriodRepo;
-import clairgustafson.StudentGroup.repository.TeacherRepo;
+
+import com.clairgustafson.StudentGroup.entity.Period;
+import com.clairgustafson.StudentGroup.entity.Teacher;
+import com.clairgustafson.StudentGroup.repository.PeriodRepo;
+import com.clairgustafson.StudentGroup.repository.TeacherRepo;
 
 @Service
 public class PeriodService {

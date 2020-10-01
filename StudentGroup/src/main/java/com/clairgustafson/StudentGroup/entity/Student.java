@@ -1,4 +1,4 @@
-package clairgustafson.StudentGroup.entity;
+package com.clairgustafson.StudentGroup.entity;
 
 import java.util.Set;
 
@@ -10,9 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import clairgustafson.StudentGroup.util.AcademicLevel;
+import com.clairgustafson.StudentGroup.util.AcademicLevel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Student {

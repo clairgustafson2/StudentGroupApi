@@ -1,8 +1,8 @@
-package clairgustafson.StudentGroup.repository;
+package com.clairgustafson.StudentGroup.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import clairgustafson.StudentGroup.entity.Student;
+import com.clairgustafson.StudentGroup.entity.Student;
 
 public interface StudentRepo extends CrudRepository <Student, Long> {
 
