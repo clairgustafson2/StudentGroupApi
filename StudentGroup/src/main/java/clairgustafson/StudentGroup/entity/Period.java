@@ -6,7 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Period {
@@ -14,10 +18,13 @@ public class Period {
 	private Long id;
 	private Long number;
 	private String name;
-	private String teacher;
+	private Teacher teacher;
 	private Set<Student> students;
 	
+	@JsonIgnore
+	private Set<Groups> group;
 	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long getId() {
@@ -44,21 +51,32 @@ public class Period {
 		this.name = name;
 	}
 	
-	public String getTeacher() {
+	@ManyToOne
+	@JoinColumn(name = "teacherId")
+	public Teacher getTeacher() {
 		return teacher;
 	}
-	
-	public void setTeacher(String teacher) {
+
+	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
 	}
-	
-	@OneToMany (mappedBy = "groups")
+
+	@OneToMany (mappedBy = "period")
 	public Set<Student> getStudents() {
 		return students;
 	}
 	
 	public void setStudents(Set<Student> students) {
 		this.students = students;
+	}
+	
+	@OneToMany(mappedBy = "period")
+	public Set<Groups> getGroup() {
+		return group;
+	}
+
+	public void setGroup(Set<Groups> group) {
+		this.group = group;
 	}
 
 }

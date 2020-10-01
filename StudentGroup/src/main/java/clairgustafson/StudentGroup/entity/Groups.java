@@ -3,11 +3,13 @@ package clairgustafson.StudentGroup.entity;
 import java.time.LocalDate;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
@@ -20,10 +22,11 @@ public class Groups {
 	private String name;
 	private LocalDate startDate;
 	private Set<Student> students;
-	private Set<Standard> standard;
+	private Standard standard;
+	private Period period;
 	
 	@JsonIgnore
-	private Period period;
+	private Teacher teacher;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,12 +46,13 @@ public class Groups {
 		this.name = name;
 	}
 	
-	
-	public Set<Standard> getStandard() {
+	@ManyToOne
+	@JoinColumn (name = "standardId")
+	public Standard getStandard() {
 		return standard;
 	}
 	
-	public void setStandard(Set<Standard> standard) {
+	public void setStandard(Standard standard) {
 		this.standard = standard;
 	}
 	
@@ -62,7 +66,10 @@ public class Groups {
 	}
 
 
-	@ManyToMany(mappedBy = "groups")
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable (name = "groups_student",
+			joinColumns = @JoinColumn(name = "groupsId", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "studentId", referencedColumnName = "id"))
 	public Set<Student> getStudents() {
 		return students;
 	}
@@ -80,6 +87,15 @@ public class Groups {
 	public void setPeriod(Period period) {
 		this.period = period;
 	}
+	
+	@ManyToOne
+	@JoinColumn(name = "teacherId")
+	public Teacher getTeacher() {
+		return teacher;
+	}
 
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
+	}
 
 }

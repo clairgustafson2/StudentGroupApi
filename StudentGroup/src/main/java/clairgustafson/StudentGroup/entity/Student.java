@@ -8,8 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import clairgustafson.StudentGroup.util.AcademicLevel;
 
@@ -21,6 +22,9 @@ public class Student {
 	private String lastName;
 	private Period period;
 	private AcademicLevel level;
+	private Teacher teacher;
+	
+	@JsonIgnore
 	private Set<Groups> group;
 	
 	
@@ -50,7 +54,7 @@ public class Student {
 		this.lastName = lastName;
 	}
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id")
 	public Period getPeriod() {
 		return period;
@@ -68,13 +72,23 @@ public class Student {
 		this.level = level;
 	}
 
-	@OneToMany(mappedBy = "groups")
+	@ManyToMany(mappedBy = "student")
 	public Set<Groups> getGroup() {
 		return group;
 	}
 
 	public void setGroup(Set<Groups> group) {
 		this.group = group;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "teacherId")
+	public Teacher getTeacher() {
+		return teacher;
+	}
+
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
 	}
 
 }

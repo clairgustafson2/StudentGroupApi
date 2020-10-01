@@ -22,11 +22,13 @@ public class Teacher {
 	private String school;
 	
 	@JsonIgnore
-	private Set<Groups> group;
+	private Set<Student> students;
 	
 	@JsonIgnore
 	private Set<Period> periods;
 	
+	@JsonIgnore
+	private Set<Groups> groups;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -81,12 +83,12 @@ public class Teacher {
 	}
 	
 	@OneToMany(mappedBy = "teacher")
-	public Set<Groups> getGroup() {
-		return group;
+	public Set<Student> getStudents() {
+		return students;
 	}
 
-	public void setGroup(Set<Groups> group) {
-		this.group = group;
+	public void setStudents(Set<Student> students) {
+		this.students = students;
 	}
 
 	@OneToMany(mappedBy = "teacher")
@@ -96,6 +98,15 @@ public class Teacher {
 
 	public void setPeriods(Set<Period> periods) {
 		this.periods = periods;
+	}
+
+	@OneToMany(mappedBy = "teacher")
+	public Set<Groups> getGroups() {
+		return groups;
+	}
+
+	public void setGroups(Set<Groups> groups) {
+		this.groups = groups;
 	}
 
 }
