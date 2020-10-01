@@ -1,29 +1,53 @@
 package clairgustafson.StudentGroup.service;
 
-import org.springframework.util.MultiValueMap;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import clairgustafson.StudentGroup.entity.Student;
+import clairgustafson.StudentGroup.repository.StudentRepo;
 
+@Service
 public class StudentService {
+	
+private static final Logger logger = LogManager.getLogger(StudentService.class);
+	
+	@Autowired
+	private StudentRepo repo;
+	
+	//GET
+	public Iterable<Student> getStudents(){
+		return repo.findAll();
+	}
+	
+	//POST
+	public Student createStudent(Student student) {
+		return repo.save(student);
+	}
+	
 
-	public MultiValueMap<String, String> createStudent(Student student) {
-		// TODO Auto-generated method stub
-		return null;
+	//UPDATE
+	public Student updateStudent(Student student, Long id) throws Exception{
+		try {
+			Student oldStudent = repo.findById(id).orElseThrow();
+			oldStudent.setFirstName(student.getFirstName());
+			oldStudent.setLastName(student.getLastName());
+			oldStudent.setPeriod(student.getPeriod());
+			oldStudent.setLevel(student.getLevel());
+			return repo.save(oldStudent);
+		} catch (Exception e) {
+			logger.error("Exception occurred while trying to update student" + id, e);
+			throw new Exception("Unable to update student");
+		}
 	}
 
-	public MultiValueMap<String, String> getStudents() {
-		// TODO Auto-generated method stub
-		return null;
+	//DELETE
+	public void removeStudent(Long id) throws Exception {
+		try {
+			repo.deleteById(id);
+		} catch (Exception e) {
+			logger.error("Exception occurred while trying to delete student:" + id, e);
+			throw new Exception("Unable to delete student.");
+		}
 	}
-
-	public MultiValueMap<String, String> updateStudent(Student student, Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void removeStudent(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

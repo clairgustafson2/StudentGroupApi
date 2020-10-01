@@ -16,16 +16,17 @@ public class StandardService {
 	@Autowired
 	private StandardRepo repo;
 
+	//POST
 	public Standard createStandard(Standard standard) {
 		return repo.save(standard);
 	}
 
-
+	//GET
 	public Iterable<Standard> getStandards(){
 		return repo.findAll();
 	}
 	
-
+	//UPDATE
 	public Standard updateStandard(Standard standard, Long id) throws Exception{
 		try {
 			Standard oldStandard = repo.findById(id).orElseThrow();
@@ -40,7 +41,7 @@ public class StandardService {
 		}
 	}
 	
-
+	//DELETE
 	public void removeStandard(Long id) throws Exception {
 		try {
 			repo.deleteById(id);

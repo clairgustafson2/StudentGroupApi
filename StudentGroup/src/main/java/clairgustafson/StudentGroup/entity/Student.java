@@ -22,6 +22,8 @@ public class Student {
 	private String lastName;
 	private Period period;
 	private AcademicLevel level;
+	
+	@JsonIgnore
 	private Teacher teacher;
 	
 	@JsonIgnore
