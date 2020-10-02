@@ -1,8 +1,7 @@
 package com.clairgustafson.StudentGroup.entity;
 
 import java.time.LocalDate;
-import java.util.Set;
-
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +20,7 @@ public class Groups {
 	private Long id;
 	private String name;
 	private LocalDate startDate;
-	private Set<Student> students;
+	private List<Student> students;
 	private Standard standard;
 	private Period period;
 	
@@ -70,11 +69,11 @@ public class Groups {
 	@JoinTable (name = "groups_student",
 			joinColumns = @JoinColumn(name = "groupsId", referencedColumnName = "id"),
 			inverseJoinColumns = @JoinColumn(name = "studentId", referencedColumnName = "id"))
-	public Set<Student> getStudents() {
+	public List<Student> getStudents() {
 		return students;
 	}
 
-	public void setStudents(Set<Student> students) {
+	public void setStudents(List<Student> students) {
 		this.students = students;
 	}
 	

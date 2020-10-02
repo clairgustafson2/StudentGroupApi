@@ -1,5 +1,6 @@
 package com.clairgustafson.StudentGroup.entity;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -19,7 +20,7 @@ public class Period {
 	private Long number;
 	private String name;
 	private Teacher teacher;
-	private Set<Student> students;
+	private List<Student> students;
 	
 	@JsonIgnore
 	private Set<Groups> group;
@@ -62,11 +63,11 @@ public class Period {
 	}
 
 	@OneToMany (mappedBy = "period")
-	public Set<Student> getStudents() {
+	public List<Student> getStudents() {
 		return students;
 	}
 	
-	public void setStudents(Set<Student> students) {
+	public void setStudents(List<Student> students) {
 		this.students = students;
 	}
 	

@@ -1,5 +1,7 @@
 package com.clairgustafson.StudentGroup.controller;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.clairgustafson.StudentGroup.entity.Groups;
 import com.clairgustafson.StudentGroup.service.GroupsService;
 
 @RestController
@@ -19,17 +20,24 @@ public class GroupsController {
 	@Autowired
 	private GroupsService service;
 	
+	
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<Object> createGroup(@RequestBody Groups groups){
-		return new ResponseEntity<Object>(service.createGroup(groups), HttpStatus.CREATED);
+	public ResponseEntity<Object> createGroup(@RequestBody Set<Long> studentIds, @PathVariable Long id){
+		try {
+			return new ResponseEntity<Object>(service.createGroup(studentIds, id), HttpStatus.CREATED);
+		} catch (Exception e){	
+			return new ResponseEntity<Object>(e, HttpStatus.BAD_REQUEST);
+		}
 	}
 	
-	@RequestMapping(value="/{groupId}", method=RequestMethod.PUT)
-	public ResponseEntity<Object> updateGroup(@RequestBody Groups groups, @PathVariable Long id) {
+	
+	@RequestMapping(value="/{groupsId}", method=RequestMethod.DELETE)
+	public ResponseEntity<Object> deleteGroups(@PathVariable Long id) {
 		try {
-			return new ResponseEntity<Object>(service.updateGroup(groups, id), HttpStatus.OK);
+			service.removeGroups(id);
+			return new ResponseEntity<Object>("Successfully deleted groups with id: " + id, HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Object>("Unable to update group", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<Object>("Unable to groups period.", HttpStatus.BAD_REQUEST);
 		}
 	}
 

@@ -27,7 +27,7 @@ public class Student {
 	private Teacher teacher;
 	
 	@JsonIgnore
-	private Set<Groups> group;
+	private Set<Groups> groups;
 	
 	
 	@Id
@@ -75,12 +75,12 @@ public class Student {
 	}
 
 	@ManyToMany(mappedBy = "student")
-	public Set<Groups> getGroup() {
-		return group;
+	public Set<Groups> getGroups() {
+		return groups;
 	}
 
-	public void setGroup(Set<Groups> group) {
-		this.group = group;
+	public void setGroups(Set<Groups> groups) {
+		this.groups = groups;
 	}
 
 	@ManyToOne

@@ -27,3 +27,461 @@
 2020-10-01 09:48:08,016 : Shutting down ExecutorService 'applicationTaskExecutor'
 2020-10-01 09:48:08,017 : HikariPool-1 - Shutdown initiated...
 2020-10-01 09:48:08,025 : HikariPool-1 - Shutdown completed.
+2020-10-01 18:47:47,204 : Starting App on MacBook-Pro.local with PID 22385 (/Users/clairgustafson/git/StudentGroupApi/StudentGroup/target/classes started by clairgustafson in /Users/clairgustafson/git/StudentGroupApi/StudentGroup)
+2020-10-01 18:47:47,212 : No active profile set, falling back to default profiles: default
+2020-10-01 18:47:47,852 : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:47:47,919 : Finished Spring Data repository scanning in 58ms. Found 5 JPA repository interfaces.
+2020-10-01 18:47:48,471 : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:47:48,482 : Initializing ProtocolHandler ["http-nio-8080"]
+2020-10-01 18:47:48,483 : Starting service [Tomcat]
+2020-10-01 18:47:48,483 : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-10-01 18:47:48,574 : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:47:48,574 : Root WebApplicationContext: initialization completed in 1314 ms
+2020-10-01 18:47:48,734 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:47:48,784 : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:47:48,837 : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:47:48,849 : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-10-01 18:47:49,053 : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:47:49,210 : HikariPool-1 - Starting...
+2020-10-01 18:47:49,228 : Starting ProtocolHandler ["http-nio-8080"]
+2020-10-01 18:47:49,278 : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:47:49,279 : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:47:49,680 : HikariPool-1 - Start completed.
+2020-10-01 18:47:49,707 : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-10-01 18:47:49,971 : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'groupsRepo' defined in com.clairgustafson.StudentGroup.repository.GroupsRepo defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.group
+2020-10-01 18:47:49,972 : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:47:49,972 : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.group
+2020-10-01 18:47:49,972 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:47:49,973 : HikariPool-1 - Shutdown initiated...
+2020-10-01 18:47:49,985 : HikariPool-1 - Shutdown completed.
+2020-10-01 18:47:49,987 : Pausing ProtocolHandler ["http-nio-8080"]
+2020-10-01 18:47:49,996 : Stopping service [Tomcat]
+2020-10-01 18:47:50,011 : Stopping ProtocolHandler ["http-nio-8080"]
+2020-10-01 18:47:50,015 : Destroying ProtocolHandler ["http-nio-8080"]
+2020-10-01 18:47:50,033 : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-01 18:47:50,035 : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'groupsRepo' defined in com.clairgustafson.StudentGroup.repository.GroupsRepo defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.group
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1697)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1442)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:624)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:612)
+	at org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:51)
+	at org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:36)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:898)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.clairgustafson.StudentGroup.App.main(App.java:13)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.group
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 28 more
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.group
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:844)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:795)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:53)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1693)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1661)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:286)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-10-01 18:52:15,321 : Starting App on MacBook-Pro.local with PID 22404 (/Users/clairgustafson/git/StudentGroupApi/StudentGroup/target/classes started by clairgustafson in /Users/clairgustafson/git/StudentGroupApi/StudentGroup)
+2020-10-01 18:52:15,328 : No active profile set, falling back to default profiles: default
+2020-10-01 18:52:15,907 : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 18:52:15,969 : Finished Spring Data repository scanning in 54ms. Found 5 JPA repository interfaces.
+2020-10-01 18:52:16,499 : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 18:52:16,510 : Initializing ProtocolHandler ["http-nio-8080"]
+2020-10-01 18:52:16,510 : Starting service [Tomcat]
+2020-10-01 18:52:16,511 : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-10-01 18:52:16,598 : Initializing Spring embedded WebApplicationContext
+2020-10-01 18:52:16,598 : Root WebApplicationContext: initialization completed in 1223 ms
+2020-10-01 18:52:16,749 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:52:16,788 : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 18:52:16,839 : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-10-01 18:52:16,842 : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 18:52:17,006 : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 18:52:17,123 : HikariPool-1 - Starting...
+2020-10-01 18:52:17,217 : Starting ProtocolHandler ["http-nio-8080"]
+2020-10-01 18:52:17,257 : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 18:52:17,259 : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 18:52:17,576 : HikariPool-1 - Start completed.
+2020-10-01 18:52:17,593 : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-10-01 18:52:17,834 : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'groupsRepo' defined in com.clairgustafson.StudentGroup.repository.GroupsRepo defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+2020-10-01 18:52:17,835 : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 18:52:17,836 : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+2020-10-01 18:52:17,836 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-01 18:52:17,836 : HikariPool-1 - Shutdown initiated...
+2020-10-01 18:52:17,860 : HikariPool-1 - Shutdown completed.
+2020-10-01 18:52:17,863 : Pausing ProtocolHandler ["http-nio-8080"]
+2020-10-01 18:52:17,871 : Stopping service [Tomcat]
+2020-10-01 18:52:17,875 : Stopping ProtocolHandler ["http-nio-8080"]
+2020-10-01 18:52:17,880 : Destroying ProtocolHandler ["http-nio-8080"]
+2020-10-01 18:52:17,885 : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-01 18:52:17,887 : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'groupsRepo' defined in com.clairgustafson.StudentGroup.repository.GroupsRepo defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1697)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1442)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:624)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:612)
+	at org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:51)
+	at org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:36)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:898)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.clairgustafson.StudentGroup.App.main(App.java:13)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 28 more
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:844)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:795)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:53)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1693)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1661)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:286)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-10-01 19:19:07,108 : Starting App on MacBook-Pro.local with PID 22458 (/Users/clairgustafson/git/StudentGroupApi/StudentGroup/target/classes started by clairgustafson in /Users/clairgustafson/git/StudentGroupApi/StudentGroup)
+2020-10-01 19:19:07,116 : No active profile set, falling back to default profiles: default
+2020-10-01 19:19:07,714 : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 19:19:07,774 : Finished Spring Data repository scanning in 53ms. Found 5 JPA repository interfaces.
+2020-10-01 19:19:08,307 : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 19:19:08,316 : Initializing ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:19:08,316 : Starting service [Tomcat]
+2020-10-01 19:19:08,317 : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-10-01 19:19:08,406 : Initializing Spring embedded WebApplicationContext
+2020-10-01 19:19:08,406 : Root WebApplicationContext: initialization completed in 1240 ms
+2020-10-01 19:19:08,564 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:19:08,609 : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 19:19:08,664 : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 19:19:08,668 : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-10-01 19:19:08,850 : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 19:19:08,996 : HikariPool-1 - Starting...
+2020-10-01 19:19:09,058 : Starting ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:19:09,097 : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 19:19:09,099 : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 19:19:09,448 : HikariPool-1 - Start completed.
+2020-10-01 19:19:09,469 : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-10-01 19:19:09,765 : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'teacherRepo' defined in com.clairgustafson.StudentGroup.repository.TeacherRepo defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.clairgustafson.StudentGroup.entity.Student column: id (should be mapped with insert="false" update="false")
+2020-10-01 19:19:09,766 : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:19:09,766 : Invocation of destroy method failed on bean with name 'entityManagerFactory': javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.clairgustafson.StudentGroup.entity.Student column: id (should be mapped with insert="false" update="false")
+2020-10-01 19:19:09,766 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:19:09,767 : HikariPool-1 - Shutdown initiated...
+2020-10-01 19:19:09,778 : HikariPool-1 - Shutdown completed.
+2020-10-01 19:19:09,782 : Pausing ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:19:09,791 : Stopping service [Tomcat]
+2020-10-01 19:19:09,795 : Stopping ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:19:09,798 : Destroying ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:19:09,805 : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-01 19:19:09,806 : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'teacherRepo' defined in com.clairgustafson.StudentGroup.repository.TeacherRepo defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.clairgustafson.StudentGroup.entity.Student column: id (should be mapped with insert="false" update="false")
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1697)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1442)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:624)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:612)
+	at org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:51)
+	at org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:36)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:898)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.clairgustafson.StudentGroup.App.main(App.java:13)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.clairgustafson.StudentGroup.entity.Student column: id (should be mapped with insert="false" update="false")
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 28 more
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.clairgustafson.StudentGroup.entity.Student column: id (should be mapped with insert="false" update="false")
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:403)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.hibernate.MappingException: Repeated column in mapping for entity: com.clairgustafson.StudentGroup.entity.Student column: id (should be mapped with insert="false" update="false")
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:862)
+	at org.hibernate.mapping.PersistentClass.checkPropertyColumnDuplication(PersistentClass.java:880)
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:902)
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:634)
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:267)
+	at org.hibernate.boot.internal.MetadataImpl.validate(MetadataImpl.java:354)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:465)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	... 4 more
+2020-10-01 19:19:30,344 : Starting App on MacBook-Pro.local with PID 22459 (/Users/clairgustafson/git/StudentGroupApi/StudentGroup/target/classes started by clairgustafson in /Users/clairgustafson/git/StudentGroupApi/StudentGroup)
+2020-10-01 19:19:30,351 : No active profile set, falling back to default profiles: default
+2020-10-01 19:19:30,947 : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 19:19:31,006 : Finished Spring Data repository scanning in 52ms. Found 5 JPA repository interfaces.
+2020-10-01 19:19:31,541 : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 19:19:31,551 : Initializing ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:19:31,552 : Starting service [Tomcat]
+2020-10-01 19:19:31,553 : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-10-01 19:19:31,643 : Initializing Spring embedded WebApplicationContext
+2020-10-01 19:19:31,643 : Root WebApplicationContext: initialization completed in 1243 ms
+2020-10-01 19:19:31,801 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:19:31,840 : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 19:19:31,896 : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 19:19:31,901 : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-10-01 19:19:32,065 : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 19:19:32,211 : HikariPool-1 - Starting...
+2020-10-01 19:19:32,261 : Starting ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:19:32,299 : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 19:19:32,301 : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 19:19:32,648 : HikariPool-1 - Start completed.
+2020-10-01 19:19:32,671 : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-10-01 19:19:32,922 : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'groupsRepo' defined in com.clairgustafson.StudentGroup.repository.GroupsRepo defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+2020-10-01 19:19:32,924 : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:19:32,924 : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+2020-10-01 19:19:32,925 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:19:32,925 : HikariPool-1 - Shutdown initiated...
+2020-10-01 19:19:32,947 : HikariPool-1 - Shutdown completed.
+2020-10-01 19:19:32,951 : Pausing ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:19:32,975 : Stopping service [Tomcat]
+2020-10-01 19:19:32,979 : Stopping ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:19:32,986 : Destroying ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:19:32,998 : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-01 19:19:32,999 : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'groupsRepo' defined in com.clairgustafson.StudentGroup.repository.GroupsRepo defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1697)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1442)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:624)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:612)
+	at org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:51)
+	at org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:36)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:898)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.clairgustafson.StudentGroup.App.main(App.java:13)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 28 more
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:844)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:795)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:53)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1693)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1661)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:286)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-10-01 19:20:05,840 : Starting App on MacBook-Pro.local with PID 22461 (/Users/clairgustafson/git/StudentGroupApi/StudentGroup/target/classes started by clairgustafson in /Users/clairgustafson/git/StudentGroupApi/StudentGroup)
+2020-10-01 19:20:05,849 : No active profile set, falling back to default profiles: default
+2020-10-01 19:20:06,452 : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-01 19:20:06,518 : Finished Spring Data repository scanning in 59ms. Found 5 JPA repository interfaces.
+2020-10-01 19:20:07,039 : Tomcat initialized with port(s): 8080 (http)
+2020-10-01 19:20:07,051 : Initializing ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:20:07,051 : Starting service [Tomcat]
+2020-10-01 19:20:07,052 : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-10-01 19:20:07,146 : Initializing Spring embedded WebApplicationContext
+2020-10-01 19:20:07,146 : Root WebApplicationContext: initialization completed in 1256 ms
+2020-10-01 19:20:07,304 : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:20:07,348 : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-01 19:20:07,406 : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-10-01 19:20:07,408 : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-01 19:20:07,591 : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-01 19:20:07,720 : HikariPool-1 - Starting...
+2020-10-01 19:20:07,783 : Starting ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:20:07,818 : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-01 19:20:07,820 : Triggering deferred initialization of Spring Data repositories…
+2020-10-01 19:20:08,183 : HikariPool-1 - Start completed.
+2020-10-01 19:20:08,203 : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-10-01 19:20:08,454 : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'periodRepo' defined in com.clairgustafson.StudentGroup.repository.PeriodRepo defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+2020-10-01 19:20:08,456 : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-01 19:20:08,456 : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+2020-10-01 19:20:08,456 : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-01 19:20:08,457 : HikariPool-1 - Shutdown initiated...
+2020-10-01 19:20:08,484 : HikariPool-1 - Shutdown completed.
+2020-10-01 19:20:08,487 : Pausing ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:20:08,495 : Stopping service [Tomcat]
+2020-10-01 19:20:08,499 : Stopping ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:20:08,504 : Destroying ProtocolHandler ["http-nio-8080"]
+2020-10-01 19:20:08,511 : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-01 19:20:08,512 : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'periodRepo' defined in com.clairgustafson.StudentGroup.repository.PeriodRepo defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaMappingContext' while setting bean property 'mappingContext'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1697)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1442)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:624)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:612)
+	at org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:51)
+	at org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:36)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:898)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.clairgustafson.StudentGroup.App.main(App.java:13)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaMappingContext': Invocation of init method failed; nested exception is org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1794)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 28 more
+Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: com.clairgustafson.StudentGroup.entity.Groups.student in com.clairgustafson.StudentGroup.entity.Student.groups
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:844)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:795)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:53)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1693)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1661)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:286)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
